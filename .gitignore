@@ -1,0 +1,9 @@
+#ignore jupyter checkpoints
+.ipynb_checkpoints/
+.ipynb_checkpoint/
+
+#node builds
+node_modules/
+
+#webapp builds
+dist/

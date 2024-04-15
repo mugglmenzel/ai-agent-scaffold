@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <title>Vertex AI Agent with Gemini</title>
+</head>
+
+<body class="mdc-typography">
+
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed" data-mdc-auto-init="MDCTopAppBar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+                <span class="mdc-top-app-bar__title">Vertex AI Agent with Gemini</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"></section>
+        </div>
+    </header>
+
+    <main role="main" class="mdc-layout-grid mdc-top-app-bar--fixed-adjust">
+        <div class="mdc-layout-spacer mdc-layout-spacer--50"></div>
+        <div class="mdc-card mdc-card--padded mdc-card--chat">
+            <div tabindex="0">
+                <div class="mdc-typography mdc-typography--headline6">Hi, I am your helpful agent!</div>
+                <div class="mdc-typography mdc-typography--body3">Ask me anything and I proof to you that I am smart.</div>
+                <hr class="mdc-divider--rounded">
+            
+                <div id="chat-grid" class="mdc-layout-grid">
+                    <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+                            <div class="mdc-card  mdc-card--outlined mdc-chat-bubble mdc-chat-bubble--ai mdc-elevation--z2">
+                                <div class="mdc-typography mdc-typography--body2">Good to see you! What would you like to know today?</div>
+                            </div>
+                        </div>
+                        <div class="mdc-layout-grid__cell  mdc-layout-grid__cell--span-6"></div>
+                    </div>
+                    <!--
+                    <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell  mdc-layout-grid__cell--span-6"></div>
+                        <div class="mdc-layout-grid__cell  mdc-layout-grid__cell--span-6">
+                            <div class="mdc-card  mdc-card--outlined mdc-chat-bubble mdc-chat-bubble--user">
+                                <div class="mdc-typography mdc-typography--body2">How can a cook a low calorie steak? Which sides have low calories?</div>
+                            </div>
+                        </div>
+                    </div>
+                    //-->
+                </div>
+              
+                
+                <div class="mdc-layout-grid">
+                    <div class="mdc-layout-grid__inner">
+                        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-11">
+                            <label class="mdc-text-field mdc-text-field--filled mdc-text-field--with-leading-icon mdc-text-field--wide" 
+                                   data-mdc-auto-init="MDCTextField">
+                                <span class="mdc-text-field__ripple"></span>
+                                <i id="chat-status-icon" class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">chat</i>
+                                <input id="chat-message-input" class="mdc-text-field__input" type="text" maxlength="140">
+                                <span class="mdc-line-ripple"></span>
+                                <span class="mdc-floating-label">Your message to the agent...</span>
+                            </label>
+                            <div class="mdc-text-field-helper-line">
+                                <div class="mdc-text-field-character-counter">0 / 140</div>
+                            </div>
+                        </div>
+                        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+                            <div class="mdc-touch-target-wrapper">
+                                <button id="chat-message-send" class="mdc-icon-button mdc-icon-button--touch material-icons">
+                                    <div class="mdc-icon-button__ripple"></div>
+                                    send
+                                    <div class="mdc-icon-button__touch"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="mdc-layout-spacer mdc-layout-spacer--50"></div>
+    </main>
+
+    <footer class="mdc-layout-grid">
+        <hr class="mdc-divider--rounded">
+        <p class="mdc-typography--overline">&copy; Google 2024</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="text/javascript">
+        window.mdc.autoInit();
+    </script>
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+:root {
+    --mdc-theme-primary: #3367d6;
+    --mdc-theme-secondary: #feeae6;
+    //--mdc-theme-background: white;
+    //--mdc-theme-surface: white;
+    --mdc-theme-on-primary: #fff;
+    --mdc-theme-on-secondary: #442b2d;
+    //--mdc-theme-on-surface: black;
+}
+
+body {
+    margin: 0;
+}
+
+hr.mdc-divider {
+    &--rounded {
+        border-top: .1em solid #bbb;
+        border-radius: .05em;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.material-icons {
+    &--rotate {
+        animation-name: spin;
+        animation-duration: 4000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+
+.mdc-text--center {
+    text-align: center;
+}
+
+.mdc-text--right {
+    text-align: right;
+}
+
+.mdc-layout-spacer {
+    &--50 {
+        height: 50px;
+    }
+}
+
+.mdc-card {
+    &--padded {
+        padding: 1.5em;
+    }
+    
+    &--chat {
+        margin: auto;
+        width: fit-content;
+    }
+}
+
+.mdc-chat-bubble {
+    padding: 1em;
+    
+    &--ai {
+        background: #12ee99;
+        color: #fff;
+    }
+    &--user {
+        background: #1299ee;
+        color: #fff;
+    }
+}
+
+.mdc-text-field {
+    &--wide {
+        width: 100%;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "ai-agent-scaffold-assets",
+  "version": "0.0.1",
+  "description": "Static assets for an AI agent.",
+  "scripts": {
+    "test": "mocha",
+    "build": "gulp"
+  },
+  "repository": "",
+  "author": "Dr. Michael Menzel",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "chai": "latest",
+    "eslint-config-google": "latest",
+    "gulp": "latest",
+    "gulp-beautify": "latest",
+    "del": "latest",
+    "gulp-eslint": "latest",
+    "gulp-sass": "latest",
+    "mocha": "latest",
+    "node-sass": "latest"
+  },
+  "dependencies": {}
+}
