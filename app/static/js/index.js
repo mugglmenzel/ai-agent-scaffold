@@ -51,22 +51,40 @@ const chatStatusIndicator = (status = 'ready') =>{
 };
 
 const handleMessageSend = (e) =>{
-  message = $('#chat-message-input').val();
+  $('#chat-image-input').prop('files')[0].convertToBase64((imageBase64) =>{
+    message = $('#chat-message-input').val();
+    chatStatusIndicator('process');
+    addUserChatMessage(message);
 
-  chatStatusIndicator('process');
-  addUserChatMessage(message);
-
-  $.ajax({
-    url: '/chat', type: 'POST',
-    data: JSON.stringify({'message': message, 'history': chatHistory}),
-    contentType: 'application/json; charset=utf-8',
-    dataType: 'json',
-    success: (res) =>{
-      addAIChatMessage(res['message']);
-      chatStatusIndicator('ready');
-    },
+    $.ajax({
+      url: '/chat', type: 'POST',
+      data: JSON.stringify({
+        message: message,
+        image: imageBase64,
+        history: chatHistory,
+      }),
+      processData: false,
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      success: (res) =>{
+        addAIChatMessage(res['message']);
+        chatStatusIndicator('ready');
+        $('#chat-message-input').val('');
+      },
+    });
   });
-  $('#chat-message-input').val('');
+};
+
+const handleImageUpload = (e) =>{
+  $('#chat-image-input').click();
+};
+
+File.prototype.convertToBase64 = (callback) =>{
+  const reader = new FileReader();
+  reader.onloadend = (e) =>{
+    callback(e.target.result, e.target.error);
+  };
+  reader.readAsDataURL(this);
 };
 
 const registerListeners = () =>{
@@ -76,6 +94,7 @@ const registerListeners = () =>{
       handleMessageSend(e);
     }
   });
+  $('#chat-message-upload').click(handleImageUpload);
 };
 
 $(document).ready(() =>{

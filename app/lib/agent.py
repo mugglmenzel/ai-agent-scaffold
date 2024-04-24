@@ -1,6 +1,7 @@
 from langchain.agents import AgentExecutor, create_react_agent
-from langchain.globals import set_debug
-from langchain.prompts import PromptTemplate
+from langchain_core.globals import set_debug
+from langchain_core.prompts import PromptTemplate
+from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_vertexai import ChatVertexAI
 
 import vertexai
@@ -66,7 +67,7 @@ class ReActChatAgent:
     def _render_chat_history(history) -> str:
         return "\n".join([f"{msg['role']}: {msg['message']}" for msg in history])
         
-    def invoke(self, user_prompt: str, chat_history = []):
+    def invoke(self, user_prompt: str, image: str = None, chat_history = []):
         return self.agent.invoke({
             "input": user_prompt,
             "chat_history": ReActChatAgent._render_chat_history(chat_history)

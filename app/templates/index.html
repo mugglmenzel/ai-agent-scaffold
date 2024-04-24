@@ -61,6 +61,13 @@
                                 <input id="chat-message-input" class="mdc-text-field__input" type="text" maxlength="140">
                                 <span class="mdc-line-ripple"></span>
                                 <span class="mdc-floating-label">Your message to the agent...</span>
+                                <div class="mdc-touch-target-wrapper">
+                                    <button id="chat-message-upload" class="mdc-icon-button mdc-icon-button--touch material-icons">
+                                        <div class="mdc-icon-button__ripple"></div>
+                                        upload
+                                        <div class="mdc-icon-button__touch"></div>
+                                    </button>
+                                </div>
                             </label>
                             <div class="mdc-text-field-helper-line">
                                 <div class="mdc-text-field-character-counter">0 / 140</div>
@@ -79,6 +86,7 @@
                 </div>
             </div>  
         </div>
+        <input type="file" id="chat-image-input" accept="image/*" hidden>
         <div class="mdc-layout-spacer mdc-layout-spacer--50"></div>
     </main>
 

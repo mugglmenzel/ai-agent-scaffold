@@ -21,8 +21,7 @@ def chat():
         abort(400)
     else:
         content = request.json
-        res_message = agent.invoke(content['message'], content['history'])
-        print(content['history'])
+        res_message = agent.invoke(content['message'], content['image'], content['history'])
         return jsonify({'message': res_message['output']})
 
 if __name__ != '__main__':
